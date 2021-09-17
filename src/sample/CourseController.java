@@ -18,6 +18,16 @@ public class CourseController {
     private Button go_back;
 
     @FXML
+    private Button assign_student;
+
+    @FXML
+    void onAssignStudent(ActionEvent event) throws IOException {
+        Object root = FXMLLoader.load(getClass().getResource("assign-student.fxml"));
+        Scene scene = new Scene((Parent) root, 900, 600);
+        Main.primaryStage.setScene(scene);
+    }
+
+    @FXML
     void onGoback(ActionEvent event) throws IOException {
         Object root = FXMLLoader.load(getClass().getResource("home.fxml"));
         Scene scene = new Scene((Parent) root, 900, 600);

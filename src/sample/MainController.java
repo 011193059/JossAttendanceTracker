@@ -14,28 +14,48 @@ import java.io.IOException;
 public class MainController {
 
     @FXML
-    private Button create_class_btn;
-    @FXML
     private Pane cse_2201;
 
     @FXML
-    void onCreateClass(ActionEvent event) throws IOException {
-        Object root = FXMLLoader.load(getClass().getResource("create-course.fxml"));
-        Scene scene = new Scene((Parent) root, 600, 480);
+    private Pane cse_2202;
+
+    @FXML
+    private Pane cse_2203;
+
+    @FXML
+    private Button create_new_class;
+
+    @FXML
+    void onCourseOpen(ActionEvent event) throws IOException {
+        Object root = FXMLLoader.load(getClass().getResource("create-class.fxml"));
+        Scene scene = new Scene((Parent) root, 900, 600);
         Main.primaryStage.setScene(scene);
     }
 
     @FXML
-    public void onCourseOpen(javafx.scene.input.MouseEvent mouseEvent) throws IOException {
-//        Object root = FXMLLoader.load(getClass().getResource("course.fxml"));
-//        Scene scene = new Scene((Parent) root, 900, 600);
-//        Main.primaryStage.setScene(scene);
-    }
-    @FXML
-    public void onCse(javafx.scene.input.MouseEvent mouseEvent) throws IOException {
-
-        Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
-        Scene scene = new Scene( root, 900, 600);
+    public void onCse1(javafx.scene.input.MouseEvent mouseEvent) throws IOException {
+        Object root = FXMLLoader.load(getClass().getResource("course.fxml"));
+        Scene scene = new Scene((Parent) root, 900, 600);
         Main.primaryStage.setScene(scene);
     }
+    @FXML
+    public void onCse2(javafx.scene.input.MouseEvent mouseEvent) throws IOException {
+        Object root = FXMLLoader.load(getClass().getResource("course.fxml"));
+        Scene scene = new Scene((Parent) root, 900, 600);
+        Main.primaryStage.setScene(scene);
+    }
+    @FXML
+    public void onCse3(javafx.scene.input.MouseEvent mouseEvent) throws IOException {
+        Object root = FXMLLoader.load(getClass().getResource("course.fxml"));
+        Scene scene = new Scene((Parent) root, 900, 600);
+        Main.primaryStage.setScene(scene);
+    }
+    @FXML
+    void onNewStudent(ActionEvent event) throws IOException {
+        Object root = FXMLLoader.load(getClass().getResource("new-student.fxml"));
+        Scene scene = new Scene((Parent) root, 900, 600);
+        Main.primaryStage.setScene(scene);
+    }
+
+
 }
