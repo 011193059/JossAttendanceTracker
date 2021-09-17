@@ -14,34 +14,26 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class CreateClassController implements Initializable {
+public class CreateClassController {
 
     @FXML
-    private TextField name;
+    private Button save_btn;
 
     @FXML
-    private Button submit_btn;
+    private Button cancel_btn;
 
     @FXML
-    private ChoiceBox<String> department;
-
-    private String[] departments = {"CSE", "EEE", "BBA"};
-
-    @FXML
-    void onSubmit(ActionEvent event) throws IOException {
-//        String sDepartment = department.getValue();
-        String sName = name.getText();
-
-//        System.out.println(sDepartment);
-        System.out.println(sName);
-
-        Object root = FXMLLoader.load(getClass().getResource("welcome.fxml"));
+    void onCancel(ActionEvent event) throws IOException {
+        Object root = FXMLLoader.load(getClass().getResource("home.fxml"));
         Scene scene = new Scene((Parent) root, 900, 600);
         Main.primaryStage.setScene(scene);
     }
 
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
-        department.getItems().setAll(departments);
+    @FXML
+    void onSave(ActionEvent event) throws IOException {
+        Object root = FXMLLoader.load(getClass().getResource("home.fxml"));
+        Scene scene = new Scene((Parent) root, 900, 600);
+        Main.primaryStage.setScene(scene);
     }
+
 }
