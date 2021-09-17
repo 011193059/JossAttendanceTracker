@@ -1,5 +1,6 @@
 package sample;
 import javafx.application.Application;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
@@ -21,11 +22,12 @@ public class Main extends Application {
         stage.show();
     }
 
-    public static void main(String[] args) throws SQLException, IOException, ClassNotFoundException {
+    public static void main(String[] args) {
         try {
             DbConnection DbConnection = new DbConnection();
             DbConnection.createConnection();
-            DbConnection.runSqlStatement();
+            ObservableList<Student> students = DbConnection.getStudents();
+
             launch();
         } catch (Exception e) {
             System.out.println(e.getMessage());
