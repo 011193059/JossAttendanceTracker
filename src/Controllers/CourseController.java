@@ -1,4 +1,4 @@
-package sample;
+package Controllers;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -22,14 +22,14 @@ public class CourseController {
 
     @FXML
     void onAssignStudent(ActionEvent event) throws IOException {
-        Object root = FXMLLoader.load(getClass().getResource("assign-student.fxml"));
+        Object root = FXMLLoader.load(getClass().getResource("../UI/assign-student.fxml"));
         Scene scene = new Scene((Parent) root, 900, 600);
         Main.primaryStage.setScene(scene);
     }
 
     @FXML
     void onGoback(ActionEvent event) throws IOException {
-        Object root = FXMLLoader.load(getClass().getResource("home.fxml"));
+        Object root = FXMLLoader.load(getClass().getResource("../UI/home.fxml"));
         Scene scene = new Scene((Parent) root, 900, 600);
         Main.primaryStage.setScene(scene);
 
@@ -37,7 +37,7 @@ public class CourseController {
 
     @FXML
     void onTakeAttendance(ActionEvent event) throws IOException {
-        Object root = FXMLLoader.load(getClass().getResource("take-attendance.fxml"));
+        Object root = FXMLLoader.load(getClass().getResource("../UI/take-attendance.fxml"));
         Scene scene = new Scene((Parent) root, 900, 600);
         Main.primaryStage.setScene(scene);
     }

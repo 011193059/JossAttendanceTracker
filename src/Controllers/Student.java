@@ -1,12 +1,4 @@
-package sample;
-
-import javafx.collections.ObservableList;
-import javafx.scene.control.cell.PropertyValueFactory;
-
-import java.io.IOException;
-import java.net.URL;
-import java.sql.SQLException;
-import java.util.ResourceBundle;
+package Controllers;
 
 public class Student {
     int id;

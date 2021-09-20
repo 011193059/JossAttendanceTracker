@@ -1,4 +1,4 @@
-package sample;
+package Controllers;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -7,7 +7,6 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.Pane;
-import org.w3c.dom.events.MouseEvent;
 
 import java.io.IOException;
 
@@ -27,32 +26,32 @@ public class MainController {
 
     @FXML
     void onCourseOpen(ActionEvent event) throws IOException {
-        Object root = FXMLLoader.load(getClass().getResource("create-class.fxml"));
+        Object root = FXMLLoader.load(getClass().getResource("../UI/create-class.fxml"));
         Scene scene = new Scene((Parent) root, 900, 600);
         Main.primaryStage.setScene(scene);
     }
 
     @FXML
     public void onCse1(javafx.scene.input.MouseEvent mouseEvent) throws IOException {
-        Object root = FXMLLoader.load(getClass().getResource("course.fxml"));
+        Object root = FXMLLoader.load(getClass().getResource("../UI/course.fxml"));
         Scene scene = new Scene((Parent) root, 900, 600);
         Main.primaryStage.setScene(scene);
     }
     @FXML
     public void onCse2(javafx.scene.input.MouseEvent mouseEvent) throws IOException {
-        Object root = FXMLLoader.load(getClass().getResource("course.fxml"));
+        Object root = FXMLLoader.load(getClass().getResource("../UI/course.fxml"));
         Scene scene = new Scene((Parent) root, 900, 600);
         Main.primaryStage.setScene(scene);
     }
     @FXML
     public void onCse3(javafx.scene.input.MouseEvent mouseEvent) throws IOException {
-        Object root = FXMLLoader.load(getClass().getResource("course.fxml"));
+        Object root = FXMLLoader.load(getClass().getResource("../UI/course.fxml"));
         Scene scene = new Scene((Parent) root, 900, 600);
         Main.primaryStage.setScene(scene);
     }
     @FXML
     void onNewStudent(ActionEvent event) throws IOException {
-        Object root = FXMLLoader.load(getClass().getResource("new-student.fxml"));
+        Object root = FXMLLoader.load(getClass().getResource("../UI/new-student.fxml"));
         Scene scene = new Scene((Parent) root, 900, 600);
         Main.primaryStage.setScene(scene);
     }

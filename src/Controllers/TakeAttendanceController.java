@@ -1,6 +1,5 @@
-package sample;
+package Controllers;
 
-import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -8,7 +7,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.CheckBoxTableCell;
@@ -37,7 +35,7 @@ public class TakeAttendanceController implements Initializable {
 
     @FXML
     void onGoback(ActionEvent event) throws IOException {
-        Object root = FXMLLoader.load(getClass().getResource("course.fxml"));
+        Object root = FXMLLoader.load(getClass().getResource("../UI/course.fxml"));
         Scene scene = new Scene((Parent) root, 900, 600);
         Main.primaryStage.setScene(scene);
     }
