@@ -1,5 +1,13 @@
 package sample;
 
+import javafx.collections.ObservableList;
+import javafx.scene.control.cell.PropertyValueFactory;
+
+import java.io.IOException;
+import java.net.URL;
+import java.sql.SQLException;
+import java.util.ResourceBundle;
+
 public class Student {
     int id;
     String name;
@@ -34,4 +42,24 @@ public class Student {
     public String getNumber() {
         return number;
     }
+
+//    @Override
+//    public void initialize(URL url, ResourceBundle resourceBundle) {
+//        try {
+//            DbConnection DbConnection = new DbConnection();
+//            ObservableList<Student> students = DbConnection.getStudents();
+//            student_id.setCellValueFactory(new PropertyValueFactory<Student, String>("student_id"));
+//            name.setCellValueFactory(new PropertyValueFactory<Student, String>("name"));
+//            number.setCellValueFactory(new PropertyValueFactory<Student, String>("number"));
+//            department.setCellValueFactory(new PropertyValueFactory<Student, String>("department"));
+//
+//            attendance_table.setItems(students);
+//        } catch (SQLException e) {
+//            e.printStackTrace();
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        } catch (ClassNotFoundException e) {
+//            e.printStackTrace();
+//        }
+//    }
 }

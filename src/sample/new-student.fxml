@@ -16,7 +16,7 @@
                   <Font size="14.0" />
                </font>
             </Button>
-            <Button layoutX="394.0" layoutY="254.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="64.0" text="Cancel">
+            <Button  onAction="#onCancel" layoutX="394.0" layoutY="254.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="64.0" text="Cancel">
                <font>
                   <Font size="14.0" />
                </font>

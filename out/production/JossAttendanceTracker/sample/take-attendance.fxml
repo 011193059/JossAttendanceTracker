@@ -12,8 +12,8 @@
             <columns>
                 <TableColumn fx:id="student_id" prefWidth="195.0" text="ID" />
                 <TableColumn fx:id="name" prefWidth="253.0" text="Name" />
-                <TableColumn fx:id="number" prefWidth="182.0" text="Present" />
-                <TableColumn fx:id="department" prefWidth="167.0" text="Absent" />
+                <TableColumn fx:id="present" prefWidth="182.0" text="Present" />
+                <TableColumn fx:id="absent" prefWidth="167.0" text="Absent" />
             </columns>
             <padding>
                 <Insets bottom="12.0" left="12.0" right="12.0" top="12.0" />

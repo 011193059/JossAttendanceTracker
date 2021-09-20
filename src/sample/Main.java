@@ -17,7 +17,7 @@ public class Main extends Application {
         primaryStage = stage;
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("home.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 900, 600);
-        stage.setTitle("AAAAAAAAAAAATTTTEEEENNNNN!");
+        stage.setTitle("ATracker!");
         stage.setScene(scene);
         stage.show();
     }

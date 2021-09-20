@@ -40,13 +40,15 @@ public class NewStudentController {
         String cNum = contact_number.getText();
         String departmentText = department.getText();
         String studentIdText = student_id.getText();
-
-//        System.out.println(sName);
-//        System.out.println(cNum);
-//        System.out.println(departmentText);
-//        System.out.println(studentIdText);
         DbConnection db = new DbConnection();
         db.addStudent(sName, cNum, departmentText, studentIdText);
+        Object root = FXMLLoader.load(getClass().getResource("home.fxml"));
+        Scene scene = new Scene((Parent) root, 900, 600);
+        Main.primaryStage.setScene(scene);
+    }
+
+    @FXML
+    void onCancel(ActionEvent actionEvent) throws IOException {
         Object root = FXMLLoader.load(getClass().getResource("home.fxml"));
         Scene scene = new Scene((Parent) root, 900, 600);
         Main.primaryStage.setScene(scene);

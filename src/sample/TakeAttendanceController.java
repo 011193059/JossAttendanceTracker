@@ -11,6 +11,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.cell.CheckBoxTableCell;
 import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.io.IOException;
@@ -29,10 +30,10 @@ public class TakeAttendanceController implements Initializable {
     private TableColumn<Student, String> name;
 
     @FXML
-    private TableColumn<Student, String> number;
+    private TableColumn<Student, Boolean> present;
 
     @FXML
-    private TableColumn<Student, String> department;
+    private TableColumn<Student, Boolean> absent;
 
     @FXML
     void onGoback(ActionEvent event) throws IOException {
@@ -48,8 +49,10 @@ public class TakeAttendanceController implements Initializable {
             ObservableList<Student> students = DbConnection.getStudents();
             student_id.setCellValueFactory(new PropertyValueFactory<Student, String>("student_id"));
             name.setCellValueFactory(new PropertyValueFactory<Student, String>("name"));
-            number.setCellValueFactory(new PropertyValueFactory<Student, String>("number"));
-            department.setCellValueFactory(new PropertyValueFactory<Student, String>("department"));
+//            present.setCellValueFactory(new PropertyValueFactory<Student, String>("number"));
+//            department.setCellValueFactory(new PropertyValueFactory<Student, String>("department"));
+            present.setCellFactory(tc -> new CheckBoxTableCell<>());
+            absent.setCellFactory(tc -> new CheckBoxTableCell<>());
 
             attendance_table.setItems(students);
         } catch (SQLException e) {
