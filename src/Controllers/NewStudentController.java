@@ -35,16 +35,16 @@ public class NewStudentController {
         String studentIdText = student_id.getText();
         DbConnection db = new DbConnection();
         db.addStudent(sName, cNum, departmentText, studentIdText);
-        Object root = FXMLLoader.load(getClass().getResource("../UI/home.fxml"));
+        Object root = FXMLLoader.load(getClass().getResource("../UI/admin-home.fxml"));
         Scene scene = new Scene((Parent) root, 900, 600);
-        Main.primaryStage.setScene(scene);
+        AdminHome.primaryStage.setScene(scene);
     }
 
     @FXML
     void onCancel(ActionEvent actionEvent) throws IOException {
-        Object root = FXMLLoader.load(getClass().getResource("../UI/home.fxml"));
+        Object root = FXMLLoader.load(getClass().getResource("../UI/admin-home.fxml"));
         Scene scene = new Scene((Parent) root, 900, 600);
-        Main.primaryStage.setScene(scene);
+        AdminHome.primaryStage.setScene(scene);
     }
 
     @FXML

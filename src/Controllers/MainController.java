@@ -21,15 +21,7 @@ public class MainController {
     @FXML
     private Pane cse_2203;
 
-    @FXML
-    private Button create_new_class;
 
-    @FXML
-    void onCourseOpen(ActionEvent event) throws IOException {
-        Object root = FXMLLoader.load(getClass().getResource("../UI/create-class.fxml"));
-        Scene scene = new Scene((Parent) root, 900, 600);
-        Main.primaryStage.setScene(scene);
-    }
 
     @FXML
     public void onCse1(javafx.scene.input.MouseEvent mouseEvent) throws IOException {
@@ -46,12 +38,6 @@ public class MainController {
     @FXML
     public void onCse3(javafx.scene.input.MouseEvent mouseEvent) throws IOException {
         Object root = FXMLLoader.load(getClass().getResource("../UI/course.fxml"));
-        Scene scene = new Scene((Parent) root, 900, 600);
-        Main.primaryStage.setScene(scene);
-    }
-    @FXML
-    void onNewStudent(ActionEvent event) throws IOException {
-        Object root = FXMLLoader.load(getClass().getResource("../UI/new-student.fxml"));
         Scene scene = new Scene((Parent) root, 900, 600);
         Main.primaryStage.setScene(scene);
     }
