@@ -1,18 +1,18 @@
 package Controllers;
 
-public class Student {
+public class Course {
     int id;
     String name;
-    String student_id;
+    String subject;
     String department;
-    String number;
+    String section;
 
-    public Student(int id, String name, String student_id, String department, String number){
+    public Course(int id, String name, String subject, String department, String section){
         this.id = id;
         this.name = name;
-        this.student_id = student_id;
+        this.subject = subject;
         this.department = department;
-        this.number = number;
+        this.section = section;
     }
 
     public int getId() {
@@ -23,16 +23,16 @@ public class Student {
         return name;
     }
 
-    public String getStudent_id() {
-        return student_id;
+    public String getSubject() {
+        return subject;
     }
 
     public String getDepartment() {
         return department;
     }
 
-    public String getNumber() {
-        return number;
+    public String getSection() {
+        return section;
     }
-    
+
 }

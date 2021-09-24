@@ -45,6 +45,24 @@ public class DbConnection {
         return result;
     }
 
+    public String addClass(String code, String subject, String department, String section) {
+        String result = "";
+        try {
+            Statement statement = createConnection().createStatement();
+            String insertStudent = "INSERT INTO courses (name,subject,department,section) VALUES ('" + code + "', '" + subject + "', '" + department + "', '" + section + "');";
+            System.out.println("SQL query: " + insertStudent);
+            statement.execute(insertStudent);
+        } catch (IOException | ClassNotFoundException ex) {
+            Logger.getLogger(DbConnection.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println("Exception occurred: " + ex);
+            result = ex.getMessage();
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+            result = ex.getMessage();
+        }
+        return result;
+    }
+
     public ObservableList<Student>  getStudents() throws SQLException, IOException, ClassNotFoundException {
         ObservableList<Student> students = FXCollections.observableArrayList();
 
@@ -57,4 +75,19 @@ public class DbConnection {
 
         return students;
     }
+
+    public ObservableList<Course>  getCourses() throws SQLException, IOException, ClassNotFoundException {
+        ObservableList<Course> courses = FXCollections.observableArrayList();
+
+        Statement statement = createConnection().createStatement();
+        String insertStudent = "SELECT * FROM courses";
+        ResultSet rs = statement.executeQuery(insertStudent);
+        while (rs.next()) {
+            System.out.println(rs.getString("name")+ rs.getString("subject")+ rs.getString("department")+rs.getString("section"));
+            courses.add(new Course(rs.getInt("id"), rs.getString("name"), rs.getString("subject"), rs.getString("department"), rs.getString("section")));
+        }
+
+        return courses;
+    }
+
 }

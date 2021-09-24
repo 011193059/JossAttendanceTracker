@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.AssignStudentController">
+   <children>
+      <Label layoutX="69.0" layoutY="81.0" text="Enter Student IDs" />
+      <TextField layoutX="69.0" layoutY="108.0" prefHeight="25.0" prefWidth="463.0" />
+      <Button fx:id="save_assigned" layoutX="387.0" layoutY="327.0" mnemonicParsing="false" onAction="#onSaveAssigned" prefHeight="25.0" prefWidth="64.0" text="Save">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Button layoutX="468.0" layoutY="327.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="64.0" text="Cancel">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
