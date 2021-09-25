@@ -83,7 +83,6 @@ public class DbConnection {
         String insertStudent = "SELECT * FROM courses";
         ResultSet rs = statement.executeQuery(insertStudent);
         while (rs.next()) {
-            System.out.println(rs.getString("name")+ rs.getString("subject")+ rs.getString("department")+rs.getString("section"));
             courses.add(new Course(rs.getInt("id"), rs.getString("name"), rs.getString("subject"), rs.getString("department"), rs.getString("section")));
         }
 
