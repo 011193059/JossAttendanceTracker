@@ -10,7 +10,7 @@ import java.io.IOException;
 
 public class Main extends Application {
     public static Stage primaryStage;
-
+    public static DbConnection DbConnection = new DbConnection();
     @Override
     public void start(Stage stage) throws IOException {
         primaryStage = stage;
@@ -23,7 +23,7 @@ public class Main extends Application {
 
     public static void main(String[] args) {
         try {
-            DbConnection DbConnection = new DbConnection();
+
             DbConnection.createConnection();
             ObservableList<Student> students = DbConnection.getStudents();
 

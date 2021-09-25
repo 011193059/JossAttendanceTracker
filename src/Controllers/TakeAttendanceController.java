@@ -17,7 +17,7 @@ import java.net.URL;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
 
-public class TakeAttendanceController implements Initializable {
+public class TakeAttendanceController implements Initializable{
     @FXML
     private TableView<Student> attendance_table;
 

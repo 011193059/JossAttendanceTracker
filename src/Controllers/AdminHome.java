@@ -22,7 +22,7 @@ package Controllers;
         import java.sql.SQLException;
         import java.util.ResourceBundle;
 
-public class AdminHome extends Application implements Initializable {
+public class AdminHome extends Application {
 
     @FXML
     private Button create_new_class;
@@ -93,10 +93,6 @@ public class AdminHome extends Application implements Initializable {
                 DbConnection DbConnection = new DbConnection();
                 DbConnection.createConnection();
 
-//                course_code_id.setCellValueFactory(new PropertyValueFactory<Course, String>("name"));
-//                subject_id.setCellValueFactory(new PropertyValueFactory<Course, String>("subject"));
-//                department_id.setCellValueFactory(new PropertyValueFactory<Course, String>("department"));
-//                section_id.setCellValueFactory(new PropertyValueFactory<Course, String>("section"));
 
                 launch();
             } catch (Exception e) {
@@ -105,24 +101,24 @@ public class AdminHome extends Application implements Initializable {
             }
 
         }
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-        try {
-            DbConnection DbConnection = new DbConnection();
-
-            ObservableList<Course> courses = DbConnection.getCourses();
-                course_code_id.setCellValueFactory(new PropertyValueFactory<Course, String>("name"));
-                subject_id.setCellValueFactory(new PropertyValueFactory<Course, String>("subject"));
-                department_id.setCellValueFactory(new PropertyValueFactory<Course, String>("department"));
-                section_id.setCellValueFactory(new PropertyValueFactory<Course, String>("section"));
-            course_table.setItems(courses);
-
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        }
-    }
+//    @Override
+//    public void initialize(URL url, ResourceBundle resourceBundle) {
+//        try {
+//            DbConnection DbConnection = new DbConnection();
+//
+//            ObservableList<Course> courses = DbConnection.getCourses();
+////                course_code_id.setCellValueFactory(new PropertyValueFactory<Course, String>("name"));
+////                subject_id.setCellValueFactory(new PropertyValueFactory<Course, String>("subject"));
+////                department_id.setCellValueFactory(new PropertyValueFactory<Course, String>("department"));
+////                section_id.setCellValueFactory(new PropertyValueFactory<Course, String>("section"));
+//            course_table.setItems(courses);
+//
+//        } catch (SQLException e) {
+//            e.printStackTrace();
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        } catch (ClassNotFoundException e) {
+//            e.printStackTrace();
+//        }
+//    }
     }
