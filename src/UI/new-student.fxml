@@ -16,19 +16,19 @@
                   <Font size="14.0" />
                </font>
             </Button>
-            <Button  onAction="#onCancel" layoutX="394.0" layoutY="254.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="64.0" text="Cancel">
+            <Button layoutX="394.0" layoutY="254.0" mnemonicParsing="false" onAction="#onCancel" prefHeight="25.0" prefWidth="64.0" text="Cancel">
                <font>
                   <Font size="14.0" />
                </font>
             </Button>
-            <TextField fx:id="student_name" layoutX="206.0" layoutY="38.0" prefHeight="25.0" prefWidth="182.0" />
-            <TextField fx:id="contact_number" layoutX="206.0" layoutY="78.0" prefHeight="25.0" prefWidth="182.0" />
+            <TextField fx:id="student_name" layoutX="206.0" layoutY="78.0" prefHeight="25.0" prefWidth="182.0" />
+            <TextField fx:id="contact_number" layoutX="206.0" layoutY="157.0" prefHeight="25.0" prefWidth="182.0" />
             <TextField fx:id="department" layoutX="206.0" layoutY="117.0" prefHeight="25.0" prefWidth="182.0" />
-            <Label layoutX="106.0" layoutY="42.0" text="Student Name" />
-            <Label layoutX="106.0" layoutY="82.0" text="Contact Number" />
+            <Label layoutX="106.0" layoutY="42.0" text="Student ID" />
+            <Label layoutX="106.0" layoutY="82.0" text="Student Name" />
             <Label layoutX="106.0" layoutY="117.0" text="Department" />
-            <TextField  fx:id="student_id" layoutX="206.0" layoutY="157.0" prefHeight="25.0" prefWidth="182.0"  />
-            <Label layoutX="106.0" layoutY="161.0" text="Student ID" />
+            <TextField fx:id="student_id" layoutX="206.0" layoutY="38.0" prefHeight="25.0" prefWidth="182.0" />
+            <Label layoutX="106.0" layoutY="161.0" text="Contact Number" />
          </children>
       </Pane>
    </children>

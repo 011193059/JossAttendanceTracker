@@ -1,19 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
-<?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.LoginController">
+<AnchorPane prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.LoginController">
    <children>
-      <Button layoutX="274.0" layoutY="188.0" mnemonicParsing="false" onAction="#onLogn" text="Enter Now" />
-      <Text layoutY="141.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome to Joss Attendence Tracker" textAlignment="CENTER" wrappingWidth="600.0">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Text>
-      <Button layoutX="274.0" layoutY="230.0" mnemonicParsing="false" onAction="#onStudents" text="Students" />
-      <Button layoutX="274.0" layoutY="276.0" mnemonicParsing="false" onAction="#onCourses" text="Courses" />
+      <SplitPane layoutX="407.0" prefHeight="612.0" prefWidth="503.0">
+         <items>
+            <AnchorPane prefHeight="496.0" prefWidth="479.0">
+               <children>
+                  <Button fx:id="onStudents" layoutX="111.0" layoutY="203.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="280.0" style="-fx-background-color: purple; -fx-padding: 10;" text="Log in as Admin" textFill="WHITE">
+                     <font>
+                        <Font name="Calibri Bold" size="16.0" />
+                     </font>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </Button>
+                  <Button fx:id="onStudents1" layoutX="111.0" layoutY="279.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="280.0" style="-fx-background-color: purple; -fx-padding: 10;" text="Log in as Teacher" textFill="WHITE">
+                     <font>
+                        <Font name="Calibri Bold" size="16.0" />
+                     </font>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </Button>
+                  <Button fx:id="onStudents2" layoutX="111.0" layoutY="352.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="280.0" style="-fx-background-color: purple; -fx-padding: 10;" text="Log in as Student" textFill="WHITE">
+                     <font>
+                        <Font name="Calibri Bold" size="16.0" />
+                     </font>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </Button>
+               </children>
+            </AnchorPane>
+         </items>
+      </SplitPane>
+      <SplitPane prefHeight="610.0" prefWidth="408.0">
+         <items>
+            <ImageView fitHeight="610.0" fitWidth="418.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../Downloads/pexels-monstera-9433156%20(1).jpg" />
+               </image>
+            </ImageView>
+         </items>
+      </SplitPane>
    </children>
 </AnchorPane>

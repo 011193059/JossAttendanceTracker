@@ -5,20 +5,27 @@
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="200.0" prefWidth="200.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.StudentsController">
+<AnchorPane prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.StudentsController">
     <children>
-        <TableView fx:id="students_table" layoutY="47.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="567.0" prefWidth="798.0">
+        <TableView fx:id="students_table" layoutY="47.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="567.0" prefWidth="900.0" style="-fx-text-color: #749bb5;">
             <columns>
-                <TableColumn fx:id="student_id" prefWidth="195.0" text="ID" />
-                <TableColumn fx:id="name" prefWidth="253.0" text="Name" />
-                <TableColumn fx:id="department" prefWidth="253.0" text="Name" />
-                <TableColumn fx:id="number" prefWidth="253.0" text="Name" />
+                <TableColumn fx:id="student_id" prefWidth="195.0" style="-fx-text-fill: purple;" text="Student ID" />
+                <TableColumn fx:id="name" prefWidth="157.0" style="-fx-text-fill: purple;" text="Student Name" />
+                <TableColumn fx:id="department" prefWidth="174.0" style="-fx-text-fill: purple;" text="Department" />
+                <TableColumn fx:id="number" prefWidth="171.0" style="-fx-text-fill: purple;" text="Contact Number" />
             </columns>
             <padding>
                 <Insets bottom="12.0" left="12.0" right="12.0" top="12.0" />
             </padding>
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy>
         </TableView>
-        <Button fx:id="go_back" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#onGoback" text="&lt; Go Back" />
+        <Button fx:id="go_back" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#onGoback" style="-fx-background-color: purple;" text="&lt; Go Back" textFill="WHITE">
+         <font>
+            <Font name="Calibri Bold" size="13.0" />
+         </font></Button>
     </children>
 </AnchorPane>
