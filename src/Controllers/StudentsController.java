@@ -17,7 +17,7 @@ import java.net.URL;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
 
-public class StudentsController implements Initializable{
+public class StudentsController implements Initializable {
     @FXML
     private TableView<Student> students_table;
 
