@@ -25,7 +25,6 @@ public class Main extends Application {
         try {
 
             DbConnection.createConnection();
-            ObservableList<Student> students = DbConnection.getStudents();
 
             launch();
         } catch (Exception e) {

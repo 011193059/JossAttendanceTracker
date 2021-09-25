@@ -8,7 +8,7 @@ import javafx.scene.Scene;
 
 import java.io.IOException;
 
-public class MainController {
+public class LoginController {
     @FXML
     void onLogn(ActionEvent event) throws IOException {
         Object root = FXMLLoader.load(getClass().getResource("../UI/take-attendance.fxml"));
@@ -25,7 +25,6 @@ public class MainController {
 
     @FXML
     void onStudents(ActionEvent event) throws IOException {
-        System.out.println("Hererererer");
         Object root = FXMLLoader.load(getClass().getResource("../UI/students.fxml"));
         Scene scene = new Scene((Parent) root, 900, 600);
         Main.primaryStage.setScene(scene);
