@@ -5,16 +5,17 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="557.0" prefWidth="796.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.CourseController">
+<AnchorPane prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.CourseController">
     <children>
-        <Button fx:id="take_attendence_btn" layoutX="664.0" layoutY="29.0" mnemonicParsing="false" onAction="#onTakeAttendance" text="Take Attendence" />
-        <TableView layoutX="14.0" layoutY="123.0" prefHeight="411.0" prefWidth="767.0">
+        <TableView fx:id="course_table" layoutX="39.0" layoutY="101.0" prefHeight="432.0" prefWidth="822.0">
             <columns>
-                <TableColumn prefWidth="160.0" text="Date" />
-                <TableColumn minWidth="0.0" prefWidth="211.0" text="Total Present" />
-            <TableColumn prefWidth="231.0" text="Total Absent" />
+                <TableColumn fx:id="name" prefWidth="145.0" text="Name" />
+                <TableColumn fx:id="section" minWidth="0.0" prefWidth="152.0" text="Section" />
+            <TableColumn fx:id="department" prefWidth="195.0" text="Department" />
+            <TableColumn fx:id="subject" minWidth="0.0" prefWidth="142.0" text="Subject" />
+            <TableColumn fx:id="action" prefWidth="187.0" text="Action" />
             </columns>
         </TableView>
-        <Button fx:id="go_back" layoutX="14.0" layoutY="29.0" mnemonicParsing="false" onAction="#onGoback" text="&lt; Go Back" />
+        <Button fx:id="go_back" layoutX="39.0" layoutY="29.0" mnemonicParsing="false" onAction="#onGoback" text="&lt; Go Back" />
     </children>
 </AnchorPane>

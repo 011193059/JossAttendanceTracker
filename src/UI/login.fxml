@@ -22,7 +22,7 @@
                         <Insets />
                      </opaqueInsets>
                   </Button>
-                  <Button fx:id="onStudents1" layoutX="111.0" layoutY="279.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="280.0" style="-fx-background-color: purple; -fx-padding: 10;" text="Log in as Teacher" textFill="WHITE">
+                  <Button fx:id="onStudents1" layoutX="111.0" layoutY="279.0" mnemonicParsing="false" onAction="#log_in_teacher" prefHeight="38.0" prefWidth="280.0" style="-fx-background-color: purple; -fx-padding: 10;" text="Log in as Teacher" textFill="WHITE">
                      <font>
                         <Font name="Calibri Bold" size="16.0" />
                      </font>
@@ -46,7 +46,7 @@
          <items>
             <ImageView fitHeight="610.0" fitWidth="418.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../../Downloads/pexels-monstera-9433156%20(1).jpg" />
+                  <Image url="./UI/jakob-rosen-CTd5_C7p__8-unsplash%20(1).jpg" />
                </image>
             </ImageView>
          </items>

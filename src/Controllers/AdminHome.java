@@ -24,8 +24,6 @@ package Controllers;
 
 public class AdminHome extends Application {
 
-    @FXML
-    private Button create_new_class;
 
     @FXML
     private Pane cse_22011;
@@ -58,17 +56,22 @@ public class AdminHome extends Application {
     private static TableColumn<Course, String> section_id;
 
     @FXML
-    public void onNewStudent(ActionEvent actionEvent) throws IOException {
-        Object root = FXMLLoader.load(getClass().getResource("../UI/new-student.fxml"));
+    void onCourses(ActionEvent event) throws IOException {
+        Object root = FXMLLoader.load(getClass().getResource("../UI/admin-course.fxml"));
         Scene scene = new Scene((Parent) root, 900, 600);
         AdminHome.primaryStage.setScene(scene);
     }
+
     @FXML
-    public void onCourseOpen(ActionEvent actionEvent) throws IOException {
-        Object root = FXMLLoader.load(getClass().getResource("../UI/create-class.fxml"));
+    void onStudents(ActionEvent event) throws IOException {
+        System.out.println("Hererererer");
+        Object root = FXMLLoader.load(getClass().getResource("../UI/admin-students.fxml"));
         Scene scene = new Scene((Parent) root, 900, 600);
         AdminHome.primaryStage.setScene(scene);
     }
+
+
+
     @FXML
     public void onNewTeacher(ActionEvent actionEvent) throws IOException {
         Object root = FXMLLoader.load(getClass().getResource("../UI/admin-new-teacher.fxml"));
@@ -83,7 +86,7 @@ public class AdminHome extends Application {
             primaryStage = stage;
             FXMLLoader fxmlLoader = new FXMLLoader(AdminHome.class.getResource("../UI/admin-home.fxml"));
             Scene scene = new Scene(fxmlLoader.load(), 900, 600);
-            stage.setTitle("ATracker!");
+            stage.setTitle("JoAtter Admin!");
             stage.setScene(scene);
             stage.show();
         }
