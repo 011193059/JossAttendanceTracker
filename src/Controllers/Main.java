@@ -5,7 +5,9 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-import java.io.IOException;
+import java.io.*;
+import java.net.Socket;
+import java.sql.SQLException;
 
 
 public class Main extends Application {
@@ -21,15 +23,31 @@ public class Main extends Application {
         stage.show();
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         try {
-
             DbConnection.createConnection();
+            Socket socket =new Socket("127.0.0.1",8888);
+
+            OutputStreamWriter o = new OutputStreamWriter(socket.getOutputStream());
+            InputStreamReader isr = new InputStreamReader(socket.getInputStream());
+            BufferedReader reader = new BufferedReader(isr);
+
+
 
             launch();
+            String data;
+            while ((data = reader.readLine()) != null) {
+                try {
+                    System.out.println(data);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+
+            }
+
         } catch (Exception e) {
             System.out.println(e.getMessage());
             throw new IllegalStateException("Cannot connect the database! :|");
         }
     }
-}
+    }

@@ -1,17 +1,23 @@
 package Controllers;
 
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.io.IOException;
+import java.net.URL;
+import java.sql.SQLException;
+import java.util.ResourceBundle;
 
-public class AdminStudentsController {
+public class AdminStudentsController implements Initializable {
 
     @FXML
     private TableView<Student> students_table;
@@ -46,5 +52,24 @@ public class AdminStudentsController {
         AdminHome.primaryStage.setScene(scene);
     }
 
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        try {
+            DbConnection DbConnection = new DbConnection();
+            ObservableList<Student> students = DbConnection.getStudents();
+            student_id.setCellValueFactory(new PropertyValueFactory<Student, String>("student_id"));
+            name.setCellValueFactory(new PropertyValueFactory<Student, String>("name"));
+            number.setCellValueFactory(new PropertyValueFactory<Student, String>("number"));
+            department.setCellValueFactory(new PropertyValueFactory<Student, String>("department"));
+
+            students_table.setItems(students);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
 }
 

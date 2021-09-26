@@ -26,7 +26,6 @@
                 <TableColumn fx:id="section" minWidth="0.0" prefWidth="152.0" text="Section" />
                 <TableColumn fx:id="department" prefWidth="195.0" text="Department" />
                 <TableColumn fx:id="subject" minWidth="0.0" prefWidth="142.0" text="Subject" />
-                <TableColumn fx:id="action" prefWidth="187.0" text="Action" />
             </columns>
         </TableView>
         <Button fx:id="go_back" layoutX="39.0" layoutY="29.0" mnemonicParsing="false" onAction="#onGoback" style="-fx-background-color: purple;" text="&lt; Go Back" textFill="WHITE">

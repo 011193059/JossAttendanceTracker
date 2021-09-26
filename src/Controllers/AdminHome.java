@@ -1,5 +1,6 @@
 package Controllers;
 
+        import Networking.Server;
         import javafx.application.Application;
         import javafx.collections.ObservableList;
         import javafx.event.ActionEvent;
@@ -96,7 +97,17 @@ public class AdminHome extends Application {
                 DbConnection DbConnection = new DbConnection();
                 DbConnection.createConnection();
 
-
+                Thread t1 = new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        try {
+                            Server.main(args);
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                });
+                t1.start();
                 launch();
             } catch (Exception e) {
                 System.out.println(e.getMessage());

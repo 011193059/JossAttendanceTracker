@@ -48,12 +48,9 @@ public class CreateClassController {
         DbConnection db = new DbConnection();
         db.addClass(courseCodeText,subjectText, departmentText, sectionText);
 
-//        Object root = FXMLLoader.load(getClass().getResource("home.fxml"));
-//        Scene scene = new Scene((Parent) root, 900, 600);
-//        Main.primaryStage.setScene(scene);
-
-
-
+        Object root = FXMLLoader.load(getClass().getResource("../UI/admin-course.fxml"));
+        Scene scene = new Scene((Parent) root, 900, 600);
+        AdminHome.primaryStage.setScene(scene);
     }
 
 }
