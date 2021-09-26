@@ -9,11 +9,10 @@
     <children>
         <TableView layoutX="38.0" layoutY="95.0" prefHeight="411.0" prefWidth="821.0">
             <columns>
-                <TableColumn prefWidth="160.0" text="Date" />
-                <TableColumn minWidth="0.0" prefWidth="211.0" text="Total Present" />
-                <TableColumn prefWidth="231.0" text="Total Absent" />
+                <TableColumn prefWidth="820.0" text="Date" />
             </columns>
         </TableView>
         <Button fx:id="go_back" layoutX="38.0" layoutY="28.0" mnemonicParsing="false" onAction="#onGoback" text="&lt; Go Back" />
+      <Button fx:id="onNewSchedule" layoutX="751.0" layoutY="28.0" mnemonicParsing="false" onAction="#onNewSchedule" text="Create New Class" />
     </children>
 </AnchorPane>

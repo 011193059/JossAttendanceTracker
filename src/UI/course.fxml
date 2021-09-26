@@ -9,11 +9,10 @@
     <children>
         <TableView fx:id="course_table" layoutX="39.0" layoutY="101.0" prefHeight="432.0" prefWidth="822.0">
             <columns>
-                <TableColumn fx:id="name" prefWidth="145.0" text="Name" />
-                <TableColumn fx:id="section" minWidth="0.0" prefWidth="152.0" text="Section" />
-            <TableColumn fx:id="department" prefWidth="195.0" text="Department" />
-            <TableColumn fx:id="subject" minWidth="0.0" prefWidth="142.0" text="Subject" />
-            <TableColumn fx:id="action" prefWidth="187.0" text="Action" />
+                <TableColumn fx:id="name" prefWidth="247.0" text="Name" />
+                <TableColumn fx:id="section" minWidth="0.0" prefWidth="169.0" text="Section" />
+            <TableColumn fx:id="department" prefWidth="201.0" text="Department" />
+            <TableColumn fx:id="subject" minWidth="0.0" prefWidth="204.0" text="Subject" />
             </columns>
         </TableView>
         <Button fx:id="go_back" layoutX="39.0" layoutY="29.0" mnemonicParsing="false" onAction="#onGoback" text="&lt; Go Back" />

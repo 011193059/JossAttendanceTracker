@@ -63,6 +63,24 @@ public class DbConnection {
         return result;
     }
 
+    public String addSchedule(int course_id, String date) {
+        String result = "";
+        try {
+            Statement statement = createConnection().createStatement();
+            String insertStudent = "INSERT INTO schedules (course_id,date) VALUES ('" + course_id + "', '" + date + "');";
+            System.out.println("SQL query: " + insertStudent);
+            statement.execute(insertStudent);
+        } catch (IOException | ClassNotFoundException ex) {
+            Logger.getLogger(DbConnection.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println("Exception occurred: " + ex);
+            result = ex.getMessage();
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+            result = ex.getMessage();
+        }
+        return result;
+    }
+
     public ObservableList<Student>  getStudents() throws SQLException, IOException, ClassNotFoundException {
         ObservableList<Student> students = FXCollections.observableArrayList();
 
@@ -89,4 +107,16 @@ public class DbConnection {
         return courses;
     }
 
+    public ObservableList<Schedule>  getCourseSchedule(int course_id) throws SQLException, IOException, ClassNotFoundException {
+        ObservableList<Schedule> schedules = FXCollections.observableArrayList();
+
+        Statement statement = createConnection().createStatement();
+        String getSc = "SELECT * FROM schedules where course_id = " + course_id;
+        ResultSet rs = statement.executeQuery(getSc);
+        while (rs.next()) {
+            schedules.add(new Schedule(rs.getInt("id"), rs.getInt("course_id"), rs.getString("date")));
+        }
+
+        return schedules;
+    }
 }

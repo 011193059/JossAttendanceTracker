@@ -13,6 +13,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.StackPane;
 import javafx.util.Callback;
@@ -67,10 +68,25 @@ public class CourseController implements Initializable {
             section.setCellValueFactory(new PropertyValueFactory<Course, String>("section"));
             department.setCellValueFactory(new PropertyValueFactory<Course, String>("department"));
             subject.setCellValueFactory(new PropertyValueFactory<Course, String>("subject"));
-            action.setCellFactory(new Callback<TableColumn<Course, Boolean>, TableCell<Course, Boolean>>() {
-                public TableCell<Course, Boolean> call(TableColumn<Course, Boolean> personBooleanTableColumn) {
-                    return new TakeAttendanceBtn();
-                }
+
+
+            course_table.setRowFactory(tv -> {
+                TableRow<Course> row = new TableRow<>();
+                row.setOnMouseClicked(event -> {
+                    if (! row.isEmpty() && event.getButton()== MouseButton.PRIMARY && event.getClickCount() == 2) {
+                        Course clickedRow = row.getItem();
+                        CourseDetailController.courseId = clickedRow.getId();
+                        Object root = null;
+                        try {
+                            root = FXMLLoader.load(getClass().getResource("../UI/course-detail.fxml"));
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
+                        Scene scene = new Scene((Parent) root, 900, 600);
+                        Main.primaryStage.setScene(scene);
+                    }
+                });
+                return row ;
             });
 
             course_table.setItems(courses);
@@ -80,44 +96,6 @@ public class CourseController implements Initializable {
             e.printStackTrace();
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
-        }
-    }
-
-    private class TakeAttendanceBtn extends TableCell<Course, Boolean> {
-        final Button addButton       = new Button("Details");
-        final StackPane paddedButton = new StackPane();
-        final DoubleProperty buttonY = new SimpleDoubleProperty();
-
-        TakeAttendanceBtn() {
-            paddedButton.setPadding(new Insets(3));
-            paddedButton.getChildren().add(addButton);
-            addButton.setOnMousePressed(new EventHandler<MouseEvent>() {
-                @Override public void handle(MouseEvent mouseEvent) {
-                    buttonY.set(mouseEvent.getScreenY());
-                }
-            });
-            addButton.setOnAction(new EventHandler<ActionEvent>() {
-                @Override public void handle(ActionEvent actionEvent) {
-                    Object root = null;
-                    try {
-                        root = FXMLLoader.load(getClass().getResource("../UI/course-detail.fxml"));
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-                    Scene scene = new Scene((Parent) root, 900, 600);
-                    Main.primaryStage.setScene(scene);
-                }
-            });
-        }
-
-        @Override protected void updateItem(Boolean item, boolean empty) {
-            super.updateItem(item, empty);
-            if (!empty) {
-                setContentDisplay(ContentDisplay.GRAPHIC_ONLY);
-                setGraphic(paddedButton);
-            } else {
-                setGraphic(null);
-            }
         }
     }
 }

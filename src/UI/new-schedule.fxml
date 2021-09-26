@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.ScheduleController">
+   <children>
+      <DatePicker fx:id="date" layoutX="315.0" layoutY="193.0" prefHeight="25.0" prefWidth="272.0" />
+      <Text layoutX="315.0" layoutY="177.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Select Date :">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Text>
+      <Button layoutX="424.0" layoutY="413.0" mnemonicParsing="false" onAction="#onSubmit" text="Submit" />
+   </children>
+</AnchorPane>
