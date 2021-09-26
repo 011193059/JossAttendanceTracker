@@ -28,7 +28,7 @@ public class CreateClassController {
 
     @FXML
     void onCancel(ActionEvent event) throws IOException {
-        Object root = FXMLLoader.load(getClass().getResource("../UI/admin-home.fxml"));
+        Object root = FXMLLoader.load(getClass().getResource("../UI/admin-course.fxml"));
         Scene scene = new Scene((Parent) root, 900, 600);
         AdminHome.primaryStage.setScene(scene);
     }

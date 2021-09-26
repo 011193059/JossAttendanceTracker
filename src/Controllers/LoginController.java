@@ -10,6 +10,13 @@ import java.io.IOException;
 
 public class LoginController {
     @FXML
+    void log_in_teacher(ActionEvent event) throws IOException {
+        Object root = FXMLLoader.load(getClass().getResource("../UI/teacher.fxml"));
+        Scene scene = new Scene((Parent) root, 900, 600);
+        Main.primaryStage.setScene(scene);
+
+    }
+    @FXML
     void onLogn(ActionEvent event) throws IOException {
         Object root = FXMLLoader.load(getClass().getResource("../UI/take-attendance.fxml"));
         Scene scene = new Scene((Parent) root, 900, 600);

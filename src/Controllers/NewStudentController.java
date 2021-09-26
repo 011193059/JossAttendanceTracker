@@ -42,7 +42,7 @@ public class NewStudentController {
 
     @FXML
     void onCancel(ActionEvent actionEvent) throws IOException {
-        Object root = FXMLLoader.load(getClass().getResource("../UI/admin-home.fxml"));
+        Object root = FXMLLoader.load(getClass().getResource("../UI/admin-students.fxml"));
         Scene scene = new Scene((Parent) root, 900, 600);
         AdminHome.primaryStage.setScene(scene);
     }
